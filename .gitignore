@@ -1,0 +1,16 @@
+data/
+__pycache__
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.mp4
+*.pdf
+*.zip
+*.so
+*.egg-info
+dist
+build
+.ipynb_checkpoints
+.DS_Store
+doc/source/*.rst
