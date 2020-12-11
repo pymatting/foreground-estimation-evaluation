@@ -26,7 +26,7 @@ def print_results(directory):
 
                 error = scale * np.mean(list(d2.values()))
 
-                result = f"| {fg_method:10} | {alpha_method:20} | {error_name:6} | {error:5.2f} * 10^{exponents[error_name]:+d} |"
+                result = f"| {fg_method:10} | {alpha_method:20} | {error_name:6} | `{error:5.2f} * 10^{exponents[error_name]:+d}` |"
 
                 print(result)
 

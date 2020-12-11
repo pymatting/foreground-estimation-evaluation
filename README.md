@@ -33,12 +33,12 @@ Final output (after roughly 10 minutes):
 
 | Foreground | Alpha method         | Metric | Error         |
 | ---------- | -------------------- | ------ | ------------- |
-| multilevel | gt_training_highres  | SAD    | 20.85 * 10^-3 |
-| multilevel | gt_training_highres  | MSE    |  1.44 * 10^+3 |
-| multilevel | gt_training_highres  | GRAD   |  8.89 * 10^-3 |
-| naive      | gt_training_highres  | SAD    | 41.39 * 10^-3 |
-| naive      | gt_training_highres  | MSE    |  5.66 * 10^+3 |
-| naive      | gt_training_highres  | GRAD   | 20.44 * 10^-3 |
+| multilevel | gt_training_highres  | SAD    | `20.85 * 10^-3` |
+| multilevel | gt_training_highres  | MSE    | ` 1.44 * 10^+3` |
+| multilevel | gt_training_highres  | GRAD   | ` 8.89 * 10^-3` |
+| naive      | gt_training_highres  | SAD    | `41.39 * 10^-3` |
+| naive      | gt_training_highres  | MSE    | ` 5.66 * 10^+3` |
+| naive      | gt_training_highres  | GRAD   | `20.44 * 10^-3` |
 
 ## Notes
 
