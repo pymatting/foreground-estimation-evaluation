@@ -16,7 +16,7 @@ Next, the `estimate_foreground_ml` method from the PyMatting library is used to 
 
 ## Installation and Testing
 
-```
+```bash
 git clone https://github.com/pymatting/foreground-estimation-evaluation.git
 cd foreground-estimation-evaluation
 pip3 install -r requirements.txt
@@ -31,14 +31,16 @@ python3 scripts/print_results.py
 
 Final output (after roughly 10 minutes):
 
+```
 | Foreground | Alpha method         | Metric | Error         |
 | ---------- | -------------------- | ------ | ------------- |
-| multilevel | gt_training_highres  | SAD    | `20.85 * 10^-3` |
-| multilevel | gt_training_highres  | MSE    | ` 1.44 * 10^+3` |
-| multilevel | gt_training_highres  | GRAD   | ` 8.89 * 10^-3` |
-| naive      | gt_training_highres  | SAD    | `41.39 * 10^-3` |
-| naive      | gt_training_highres  | MSE    | ` 5.66 * 10^+3` |
-| naive      | gt_training_highres  | GRAD   | `20.44 * 10^-3` |
+| multilevel | gt_training_highres  | SAD    | 20.85 * 10^-3 |
+| multilevel | gt_training_highres  | MSE    |  1.44 * 10^+3 |
+| multilevel | gt_training_highres  | GRAD   |  8.89 * 10^-3 |
+| naive      | gt_training_highres  | SAD    | 41.39 * 10^-3 |
+| naive      | gt_training_highres  | MSE    |  5.66 * 10^+3 |
+| naive      | gt_training_highres  | GRAD   | 20.44 * 10^-3 |
+```
 
 ## Notes
 
