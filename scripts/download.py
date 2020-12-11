@@ -1,9 +1,8 @@
-import os
+import os, util, zipfile
 from urllib.request import urlopen
-import zipfile
 
 
-def download(download_directory="data"):
+def download(download_directory):
     os.makedirs(download_directory, exist_ok=True)
 
     urls = [
@@ -15,6 +14,8 @@ def download(download_directory="data"):
         "http://www.alphamatting.com/datasets/zip/gt_training_highres.zip",
         "http://www.alphamatting.com/datasets/zip/input_with_gt_fgd.zip",
     ]
+
+    print("Downloading dataset (approx. 2 GB in total)")
 
     for url in urls:
         filename = os.path.split(url)[-1]
@@ -51,4 +52,4 @@ def download(download_directory="data"):
 
 
 if __name__ == "__main__":
-    download()
+    download(util.find_data_directory())

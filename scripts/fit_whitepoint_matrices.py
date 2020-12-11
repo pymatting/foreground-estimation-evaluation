@@ -1,15 +1,13 @@
 import numpy as np
-import json
-import os
-import util
-import numpy as np
+import os, json, util
 
 
-def fit_whitepoint_matrices(directory="data", gamma=2.0):
+def fit_whitepoint_matrices(directory, gamma=2.0):
     output_path = os.path.join(directory, "whitepoint_matrices.json")
 
     matrices = {}
 
+    print("Computing whitepoint transform matrices")
     # fit matrix M to transform from have_lrgb to want_lrgb in least square sense
     for index in range(1, 28):
         print("image", index, "of", 27)
@@ -88,4 +86,4 @@ def fit_whitepoint_matrices(directory="data", gamma=2.0):
 
 
 if __name__ == "__main__":
-    fit_whitepoint_matrices()
+    fit_whitepoint_matrices(util.find_data_directory())

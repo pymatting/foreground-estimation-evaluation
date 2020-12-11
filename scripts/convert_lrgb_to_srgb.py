@@ -2,7 +2,7 @@ import os, json, util
 import numpy as np
 
 
-def convert_lrgb_to_srgb(directory="data", gamma=2.0):
+def convert_lrgb_to_srgb(directory, gamma=2.0):
     with open(os.path.join(directory, "whitepoint_matrices.json")) as f:
         matrices = json.load(f)
 
@@ -37,4 +37,4 @@ def convert_lrgb_to_srgb(directory="data", gamma=2.0):
 
 
 if __name__ == "__main__":
-    convert_lrgb_to_srgb()
+    convert_lrgb_to_srgb(util.find_data_directory())

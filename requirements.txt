@@ -1,0 +1,5 @@
+numpy
+pillow
+numba
+scipy
+pymatting
