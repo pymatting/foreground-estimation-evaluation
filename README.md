@@ -29,17 +29,29 @@ python3 scripts/compute_errors.py
 python3 scripts/print_results.py
 ```
 
-Final output (after roughly 10 minutes):
+Final output (naive foreground estimation method run separately):
 
 ```
 | Foreground | Alpha method         | Metric | Error         |
 | ---------- | -------------------- | ------ | ------------- |
-| multilevel | gt_training_highres  | SAD    | 20.85 * 10^-3 |
-| multilevel | gt_training_highres  | MSE    |  1.44 * 10^+3 |
-| multilevel | gt_training_highres  | GRAD   |  8.89 * 10^-3 |
 | naive      | gt_training_highres  | SAD    | 41.39 * 10^-3 |
 | naive      | gt_training_highres  | MSE    |  5.66 * 10^+3 |
 | naive      | gt_training_highres  | GRAD   | 20.44 * 10^-3 |
+| multilevel | gt_training_highres  | SAD    | 20.85 * 10^-3 |
+| multilevel | gt_training_highres  | MSE    |  1.44 * 10^+3 |
+| multilevel | gt_training_highres  | GRAD   |  8.89 * 10^-3 |
+| multilevel | cf                   | SAD    | 42.07 * 10^-3 |
+| multilevel | cf                   | MSE    |  4.21 * 10^+3 |
+| multilevel | cf                   | GRAD   | 16.57 * 10^-3 |
+| multilevel | idx                  | SAD    | 47.90 * 10^-3 |
+| multilevel | idx                  | MSE    |  5.66 * 10^+3 |
+| multilevel | idx                  | GRAD   | 15.80 * 10^-3 |
+| multilevel | ifm                  | SAD    | 29.36 * 10^-3 |
+| multilevel | ifm                  | MSE    |  2.35 * 10^+3 |
+| multilevel | ifm                  | GRAD   | 11.33 * 10^-3 |
+| multilevel | knn                  | SAD    | 31.71 * 10^-3 |
+| multilevel | knn                  | MSE    |  2.38 * 10^+3 |
+| multilevel | knn                  | GRAD   | 11.96 * 10^-3 |
 ```
 
 ## Notes
@@ -51,6 +63,7 @@ Final output (after roughly 10 minutes):
 * The dataset will be downloaded to `data/`.
 * sRGB images will appear in `data/converted/image` and `data/converted/foreground`.
 * Images are stored as BMP instead of PNG since encoding/decoding of PNGs is a relatively slow process and the space savings are negligible for natural images.
+* Unlike in [the paper](https://arxiv.org/pdf/2006.14970.pdf), the provided alpha mattes for KNN alpha matting were computed with PyMatting instead of [the author's implementation](https://github.com/dingzeyuli/knn-matting).
 
 ## References
 

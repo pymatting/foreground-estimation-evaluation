@@ -56,7 +56,12 @@ def load_image(path, mode=None):
     if path.lower().rsplit(".", 1)[-1] in {"tif", "tiff"}:
         image = read_tiff(path) / 65535.0
     else:
-        image = np.array(Image.open(path)) / 255.0
+        image = np.array(Image.open(path))
+
+        if image.dtype == np.uint8:
+            image = image / 255.0
+        else:
+            image = image / 65535.0
 
     if mode == "gray" and len(image.shape) == 3:
         image = image[:, :, 0]

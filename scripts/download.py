@@ -1,4 +1,4 @@
-import os, util, zipfile
+import os, util, shutil, zipfile
 from urllib.request import urlopen
 
 
@@ -50,6 +50,18 @@ def download(download_directory):
             with zipfile.ZipFile(path, "r") as zf:
                 zf.extractall(target_dir)
 
+    dst_directory = os.path.join(download_directory, "alpha", "gt")
+    src_directory = os.path.join(download_directory, "gt_training_highres")
+
+    os.makedirs(dst_directory, exist_ok=True)
+
+    # Copy alpha mattes
+    for filename in os.listdir(src_directory):
+        src = os.path.join(src_directory, filename)
+        dst = os.path.join(dst_directory, filename)
+
+        if not os.path.isfile(dst):
+            shutil.copyfile(src, dst)
 
 if __name__ == "__main__":
     download(util.find_data_directory())

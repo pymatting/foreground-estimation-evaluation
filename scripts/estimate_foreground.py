@@ -29,11 +29,15 @@ def estimate_foregrounds(directory):
     # Add your own method here (method name, estimate_foreground function)
     fg_methods = [
         ("multilevel", estimate_foreground_multilevel),
-        ("naive", estimate_foreground_naive),
+        #("naive", estimate_foreground_naive),
     ]
 
     alpha_methods = [
-        "gt_training_highres",
+        "gt",
+        "cf",
+        "idx",
+        "ifm",
+        "knn",
     ]
 
     print("Running foreground estimation")
@@ -45,7 +49,7 @@ def estimate_foregrounds(directory):
         image = util.load_image(path)
 
         for alpha_method in alpha_methods:
-            path = f"{directory}/{alpha_method}/{name}.png"
+            path = f"{directory}/alpha/{alpha_method}/{name}.png"
 
             alpha = util.load_image(path, "gray")
 
@@ -53,7 +57,9 @@ def estimate_foregrounds(directory):
 
                 foreground = estimate_foreground(image, alpha)
 
-                print("Image", name, "with", fg_method, "method")
+                print(
+                    f'Processing image {name} with foreground estimation '
+                    f'method {fg_method:10} and alpha matte {alpha_method:3}')
 
                 path = f"{directory}/fg_methods/{fg_method}/{alpha_method}/{name}.bmp"
 

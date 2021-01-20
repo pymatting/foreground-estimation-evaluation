@@ -14,13 +14,13 @@ def compute_errors(directory):
     for index in range(1, 28):
         name = "GT%02d" % index
 
-        path = f"{directory}/converted/foreground/{name}.bmp"
+        foreground_path = f"{directory}/converted/foreground/{name}.bmp"
 
-        true_foreground = util.load_image(path)
+        true_foreground = util.load_image(foreground_path)
 
-        path = f"{directory}/gt_training_highres/{name}.png"
+        alpha_path = f"{directory}/gt_training_highres/{name}.png"
 
-        alpha = util.load_image(path, "gray")
+        alpha = util.load_image(alpha_path, "gray")
 
         is_unknown = np.logical_and(alpha > 0, alpha < 1)
 
@@ -30,6 +30,7 @@ def compute_errors(directory):
             alpha_methods = os.listdir(f"{directory}/fg_methods/{fg_method}")
 
             for alpha_method in sorted(alpha_methods):
+
                 path = f"{directory}/fg_methods/{fg_method}/{alpha_method}/{name}.bmp"
 
                 estimated_foreground = util.load_image(path)
