@@ -34,24 +34,24 @@ Final output (naive foreground estimation method run separately):
 ```
 | Foreground | Alpha method         | Metric | Error         |
 | ---------- | -------------------- | ------ | ------------- |
-| naive      | gt_training_highres  | SAD    | 41.39 * 10^-3 |
-| naive      | gt_training_highres  | MSE    |  5.66 * 10^+3 |
-| naive      | gt_training_highres  | GRAD   | 20.44 * 10^-3 |
-| multilevel | gt_training_highres  | SAD    | 20.85 * 10^-3 |
-| multilevel | gt_training_highres  | MSE    |  1.44 * 10^+3 |
-| multilevel | gt_training_highres  | GRAD   |  8.89 * 10^-3 |
-| multilevel | cf                   | SAD    | 42.07 * 10^-3 |
-| multilevel | cf                   | MSE    |  4.21 * 10^+3 |
-| multilevel | cf                   | GRAD   | 16.57 * 10^-3 |
-| multilevel | idx                  | SAD    | 47.90 * 10^-3 |
-| multilevel | idx                  | MSE    |  5.66 * 10^+3 |
-| multilevel | idx                  | GRAD   | 15.80 * 10^-3 |
-| multilevel | ifm                  | SAD    | 29.36 * 10^-3 |
-| multilevel | ifm                  | MSE    |  2.35 * 10^+3 |
-| multilevel | ifm                  | GRAD   | 11.33 * 10^-3 |
-| multilevel | knn                  | SAD    | 31.71 * 10^-3 |
-| multilevel | knn                  | MSE    |  2.38 * 10^+3 |
-| multilevel | knn                  | GRAD   | 11.96 * 10^-3 |
+| naive      | gt_training_highres  | SAD    | 41.39 * 10^+3 |
+| naive      | gt_training_highres  | MSE    |  5.66 * 10^-3 |
+| naive      | gt_training_highres  | GRAD   | 20.44 * 10^+3 |
+| multilevel | gt_training_highres  | SAD    | 20.85 * 10^+3 |
+| multilevel | gt_training_highres  | MSE    |  1.44 * 10^-3 |
+| multilevel | gt_training_highres  | GRAD   |  8.89 * 10^+3 |
+| multilevel | cf                   | SAD    | 42.07 * 10^+3 |
+| multilevel | cf                   | MSE    |  4.21 * 10^-3 |
+| multilevel | cf                   | GRAD   | 16.57 * 10^+3 |
+| multilevel | idx                  | SAD    | 47.90 * 10^+3 |
+| multilevel | idx                  | MSE    |  5.66 * 10^-3 |
+| multilevel | idx                  | GRAD   | 15.80 * 10^+3 |
+| multilevel | ifm                  | SAD    | 29.36 * 10^+3 |
+| multilevel | ifm                  | MSE    |  2.35 * 10^-3 |
+| multilevel | ifm                  | GRAD   | 11.33 * 10^+3 |
+| multilevel | knn                  | SAD    | 31.71 * 10^+3 |
+| multilevel | knn                  | MSE    |  2.38 * 10^-3 |
+| multilevel | knn                  | GRAD   | 11.96 * 10^+3 |
 ```
 
 ## Notes
